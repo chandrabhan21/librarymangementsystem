@@ -1,6 +1,4 @@
-/* ===============================
-   RESET
-================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,9 +12,7 @@ body {
   color: #333;
 }
 
-/* ===============================
-   NAVBAR
-================================ */
+
 .navbar {
   background: #2c3e50;
   padding: 15px 30px;
@@ -24,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: visible; /* important for dropdown */
+  overflow: visible; 
 }
 
 .navbar h2 {
@@ -32,14 +28,14 @@ body {
   font-weight: 600;
 }
 
-/* nav container */
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 22px;
 }
 
-/* top links */
+
 .nav-links > a {
   color: white;
   text-decoration: none;
@@ -51,9 +47,7 @@ body {
   color: #f1c40f;
 }
 
-/* ===============================
-   DROPDOWN MENU
-================================ */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -71,7 +65,7 @@ body {
   color: #f1c40f;
 }
 
-/* dropdown box */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -86,7 +80,7 @@ body {
   animation: fadeIn 0.18s ease-in-out;
 }
 
-/* dropdown links */
+
 .dropdown-content a {
   display: block;
   padding: 11px 16px;
@@ -101,7 +95,7 @@ body {
   background: #34495e;
 }
 
-/* show dropdown */
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -118,18 +112,13 @@ body {
   }
 }
 
-/* ===============================
-   MAIN CONTAINER
-================================ */
+
 .container {
   width: 90%;
   max-width: 900px;
   margin: 40px auto;
 }
 
-/* ===============================
-   CARD
-================================ */
 .card {
   background: white;
   padding: 30px;
@@ -142,9 +131,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===============================
-   FORM
-================================ */
 .form-group {
   margin-bottom: 16px;
 }
@@ -172,10 +158,6 @@ textarea:focus {
   border-color: #667eea;
   box-shadow: 0 0 0 2px rgba(102,126,234,0.15);
 }
-
-/* ===============================
-   BUTTON
-================================ */
 .btn {
   background: #667eea;
   color: white;
@@ -192,9 +174,7 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
-/* ===============================
-   MESSAGES
-================================ */
+
 .error {
   color: #e74c3c;
   font-size: 14px;
@@ -207,9 +187,6 @@ textarea:focus {
   margin-top: 6px;
 }
 
-/* ===============================
-   TABLE (used in search page)
-================================ */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -229,10 +206,6 @@ td {
   text-align: center;
   border-bottom: 1px solid #eee;
 }
-
-/* ===============================
-   RESPONSIVE (basic)
-================================ */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
