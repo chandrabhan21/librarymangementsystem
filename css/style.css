@@ -1,0 +1,251 @@
+/* ===============================
+   RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  background: #2c3e50;
+  padding: 15px 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible; /* important for dropdown */
+}
+
+.navbar h2 {
+  color: #ecf0f1;
+  font-weight: 600;
+}
+
+/* nav container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* top links */
+.nav-links > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links > a:hover {
+  color: #f1c40f;
+}
+
+/* ===============================
+   DROPDOWN MENU
+================================ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown > a:hover {
+  color: #f1c40f;
+}
+
+/* dropdown box */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #2c3e50;
+  min-width: 200px;
+  z-index: 999;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  overflow: hidden;
+  animation: fadeIn 0.18s ease-in-out;
+}
+
+/* dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 11px 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #34495e;
+}
+
+/* show dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* ===============================
+   CARD
+================================ */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   FORM
+================================ */
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102,126,234,0.15);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn {
+  background: #667eea;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   MESSAGES
+================================ */
+.error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.success {
+  color: #27ae60;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ===============================
+   TABLE (used in search page)
+================================ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: #34495e;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===============================
+   RESPONSIVE (basic)
+================================ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .container {
+    width: 95%;
+  }
+}

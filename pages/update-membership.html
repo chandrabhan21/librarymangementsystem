@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Membership</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Update Membership</h2>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <form id="updateMemberForm">
+
+      <div class="form-group">
+        <label>Membership No *</label>
+        <input type="text" id="memNo">
+      </div>
+
+      <div class="form-group">
+        <label>Action</label>
+        <input type="radio" name="memAction" checked> Extend (6 months)
+        <input type="radio" name="memAction"> Cancel
+      </div>
+
+      <button class="btn">Update</button>
+      <div class="error" id="updateMemError"></div>
+      <div class="success" id="updateMemSuccess"></div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.getElementById("updateMemberForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const mem = document.getElementById("memNo").value.trim();
+
+  if(!mem){
+    document.getElementById("updateMemError").innerText =
+      "Membership number required";
+    return;
+  }
+
+  document.getElementById("updateMemSuccess").innerText =
+    "Membership updated!";
+});
+</script>
+
+</body>
+</html>

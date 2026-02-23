@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Return Book</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Return Book</h2>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <form id="returnForm">
+
+      <div class="form-group">
+        <label>Book Name *</label>
+        <input type="text" id="rBook">
+      </div>
+
+      <div class="form-group">
+        <label>Author</label>
+        <input type="text" id="rAuthor" readonly value="Auto Author">
+      </div>
+
+      <div class="form-group">
+        <label>Serial No *</label>
+        <input type="text" id="serialNo">
+      </div>
+
+      <div class="form-group">
+        <label>Issue Date</label>
+        <input type="date" id="rIssueDate" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Return Date</label>
+        <input type="date" id="rReturnDate">
+      </div>
+
+      <button class="btn">Confirm Return</button>
+      <div class="error" id="returnError"></div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+// mock issue date
+const issue = new Date();
+issue.setDate(issue.getDate() - 10);
+document.getElementById("rIssueDate").value =
+  issue.toISOString().split("T")[0];
+
+document.getElementById("rReturnDate").value =
+  new Date().toISOString().split("T")[0];
+
+document.getElementById("returnForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const book = document.getElementById("rBook").value.trim();
+  const serial = document.getElementById("serialNo").value.trim();
+
+  if(!book || !serial){
+    document.getElementById("returnError").innerText =
+      "Please fill mandatory fields";
+    return;
+  }
+
+  // always go to fine page
+  window.location.href = "pay-fine.html";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+
+<div class="navbar">
+  <h2>User Dashboard</h2>
+
+  <div class="nav-links">
+
+    <div class="dropdown">
+      <a href="#">Transactions ▾</a>
+      <div class="dropdown-content">
+        <a href="pages/search-book.html">Search Book</a>
+        <a href="pages/issue-book.html">Issue Book</a>
+        <a href="pages/return-book.html">Return Book</a>
+      </div>
+    </div>
+
+    <a href="pages/reports.html">Reports</a>
+    <a href="#" onclick="logout()">Logout</a>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3>Welcome User 👋</h3>
+    <p>You have access to Transactions and Reports.</p>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/navigation.js"></script>
+
+</body>
+</html>

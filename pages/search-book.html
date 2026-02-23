@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Book</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Search Books</h2>
+  <div class="nav-links">
+    <a href="#" onclick="history.back()">Back</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3>Available Books</h3>
+
+    <table border="1" width="100%" style="margin-top:15px;">
+      <tr>
+        <th>Select</th>
+        <th>Book</th>
+        <th>Author</th>
+      </tr>
+      <tr>
+        <td><input type="radio" name="bookSelect"></td>
+        <td>Java Basics</td>
+        <td>James</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="bookSelect"></td>
+        <td>Spring Boot</td>
+        <td>Rod</td>
+      </tr>
+    </table>
+
+    <br>
+    <button class="btn" onclick="goIssue()">Issue Book</button>
+    <div class="error" id="selectError"></div>
+
+  </div>
+</div>
+
+<script>
+function goIssue(){
+  const selected = document.querySelector('input[name="bookSelect"]:checked');
+  if(!selected){
+    document.getElementById("selectError").innerText =
+      "Please select a book";
+    return;
+  }
+  window.location.href = "issue-book.html";
+}
+</script>
+
+</body>
+</html>

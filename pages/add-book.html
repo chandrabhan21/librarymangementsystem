@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Add Book / Movie</h2>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <form id="addBookForm">
+
+      <div class="form-group">
+        <label>Type *</label>
+        <input type="radio" name="type" value="book" checked> Book
+        <input type="radio" name="type" value="movie"> Movie
+      </div>
+
+      <div class="form-group">
+        <label>Name *</label>
+        <input type="text" id="bName">
+      </div>
+
+      <div class="form-group">
+        <label>Author *</label>
+        <input type="text" id="bAuthor">
+      </div>
+
+      <button class="btn">Add</button>
+      <div class="error" id="addBookError"></div>
+      <div class="success" id="addBookSuccess"></div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.getElementById("addBookForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("bName").value.trim();
+  const author = document.getElementById("bAuthor").value.trim();
+
+  if(!name || !author){
+    document.getElementById("addBookError").innerText =
+      "All fields are mandatory";
+    return;
+  }
+
+  document.getElementById("addBookSuccess").innerText =
+    "Book added successfully!";
+});
+</script>
+
+</body>
+</html>

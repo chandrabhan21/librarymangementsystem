@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Management</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>User Management</h2>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <form id="userForm">
+
+      <div class="form-group">
+        <label>User Type</label>
+        <input type="radio" name="uType" checked> New
+        <input type="radio" name="uType"> Existing
+      </div>
+
+      <div class="form-group">
+        <label>Name *</label>
+        <input type="text" id="uName">
+      </div>
+
+      <button class="btn">Submit</button>
+      <div class="error" id="userError"></div>
+      <div class="success" id="userSuccess"></div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.getElementById("userForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("uName").value.trim();
+
+  if(!name){
+    document.getElementById("userError").innerText =
+      "Name is mandatory";
+    return;
+  }
+
+  document.getElementById("userSuccess").innerText =
+    "User processed successfully!";
+});
+</script>
+
+</body>
+</html>

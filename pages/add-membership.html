@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Membership</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Add Membership</h2>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <form id="addMemberForm">
+
+      <div class="form-group">
+        <label>Name *</label>
+        <input type="text" id="mName">
+      </div>
+
+      <div class="form-group">
+        <label>Duration *</label>
+        <input type="radio" name="duration" checked> 6 Months
+        <input type="radio" name="duration"> 1 Year
+        <input type="radio" name="duration"> 2 Years
+      </div>
+
+      <button class="btn">Add Membership</button>
+      <div class="error" id="addMemError"></div>
+      <div class="success" id="addMemSuccess"></div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.getElementById("addMemberForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("mName").value.trim();
+
+  if(!name){
+    document.getElementById("addMemError").innerText =
+      "All fields mandatory";
+    return;
+  }
+
+  document.getElementById("addMemSuccess").innerText =
+    "Membership added!";
+});
+</script>
+
+</body>
+</html>

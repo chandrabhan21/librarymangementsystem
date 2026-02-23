@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pay Fine</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Pay Fine</h2>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="form-group">
+      <label>Fine Amount</label>
+      <input type="text" id="fineAmount" readonly>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" id="finePaid"> Fine Paid
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>Remarks</label>
+      <textarea id="fineRemarks"></textarea>
+    </div>
+
+    <button class="btn" onclick="completeReturn()">Confirm</button>
+    <div class="error" id="fineError"></div>
+    <div class="success" id="fineSuccess"></div>
+
+  </div>
+</div>
+
+<script>
+// mock fine (change to 0 to test)
+const fine = 10;
+document.getElementById("fineAmount").value = fine;
+
+function completeReturn(){
+  const paid = document.getElementById("finePaid").checked;
+
+  if(fine > 0 && !paid){
+    document.getElementById("fineError").innerText =
+      "Please confirm fine payment";
+    return;
+  }
+
+  document.getElementById("fineSuccess").innerText =
+    "Book returned successfully!";
+}
+</script>
+
+</body>
+</html>
